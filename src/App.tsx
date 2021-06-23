@@ -32,6 +32,9 @@ function App() {
   useEffect(() => {
     fetch(api)
     .then((res) => {
+      if (res.status !== 200) {
+        throw new Error("Couldn't fetch the data");
+      }
       return res.json();
     })
     .then(data => {
@@ -45,7 +48,7 @@ function App() {
       setText(neededText);
       setCurrentChar(neededText.charAt(0));
       setIncomingChars(neededText.substr(1));
-    }).catch(err => setText(err));
+    }).catch(err => setText(`Something went wrong: ${err.message}`));
   }, [api, fetchCounter])
   
   useKeyPress((key) => {
