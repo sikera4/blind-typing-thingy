@@ -15,9 +15,7 @@ function App() {
 
   // states for the typable text
   const [text, setText] = useState<string>('');
-  const [leftPadding, setLeftPadding] = useState<string>(
-    new Array(20).fill(' ').join(''),
-  );
+  const [leftPadding, setLeftPadding] = useState<string>(new Array(20).fill(' ').join(''));
   const [outgoingChars, setOutgoingChars] = useState<string>('');
   const [currentChar, setCurrentChar] = useState<string>('');
   const [incomingChars, setIncomingChars] = useState<string>('');
@@ -45,6 +43,8 @@ function App() {
       } else {
         neededText = data.quote; 
       }
+      setOutgoingChars('');
+      setLeftPadding(new Array(20).fill(' ').join(''));
       setText(neededText);
       setCurrentChar(neededText.charAt(0));
       setIncomingChars(neededText.substr(1));
