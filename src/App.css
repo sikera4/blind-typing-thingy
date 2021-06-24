@@ -22,13 +22,17 @@
 .facey {
   margin: 0.5rem 0;
 }
-.api-changer {
+.api-changer, .speedometer-reseter {
   cursor: pointer;
   font-size: 1.25rem;
   background-color: blueviolet;
   margin-left: 1rem;
   border-radius: 4px;
   padding: 6px;
+}
+
+.speedometer-reseter {
+  margin: 0;
 }
 
 .whole-string {
@@ -38,7 +42,10 @@
 
 .Character {
   white-space: pre;
-  width: 100vw;
+  background-color: #191c1f;
+  padding: 4px;
+  border-radius: 5px;
+  border: 2px solid black;
 }
 
 .Character-current {
