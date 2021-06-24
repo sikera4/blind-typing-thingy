@@ -116,7 +116,7 @@ function App() {
           setSignCount(0);
           }}>Reset speed counters</p>
         <h3 className="stats">Accuracy: {accuracy}%</h3>
-        <p>{(currentChar === '') ? "If you're finished please choose what you'd like to type:": ''}</p>
+        <p>{(currentChar === '') ? "Please choose what you'd like to type next:": ''}</p>
         <p className='commentary'>You can choose what you want to type from a WIDE range of opportunities! What are you interested in?</p>
         <p className='api-changers'>
           <span className="api-changer" onClick={() => {
