@@ -108,13 +108,23 @@ function App() {
           <span>{incomingChars.substr(0, 20)}</span>
         </p>
         <h3 className="stats">Signs Per Minute: {spm} | Words Per Minute: {wpm}</h3>
-        <p className="speedometer-reseter" onClick={() => {
-          setStartTime(currentTime());
-          setWordCount(0);
-          setSignCount(0);
-          setWpm('0');
-          setSpm('0');
-          }}>Reset speed counters</p>
+        <p>
+          <span className="speedometer-reseter" onClick={() => {
+            setStartTime(currentTime());
+            setWordCount(0);
+            setSignCount(0);
+            setWpm('0');
+            setSpm('0');
+            }}>Reset speed counters
+          </span>
+          <span className="outChars-reseter" onClick={() => {
+            setLeftPadding(new Array(20).fill(' ').join(''));
+            setTypedChars('');
+            setOutgoingChars('');
+            setAccuracy('0');
+            }}>Clear typed characters and reset accuracy
+          </span>
+        </p>
         <h3 className="stats">Accuracy: {accuracy}%</h3>
         <p>{(currentChar === '') ? "Please choose what you'd like to type next:": ''}</p>
         <p className='commentary'>You can choose what you want to type from a WIDE range of opportunities! What are you interested in?</p>

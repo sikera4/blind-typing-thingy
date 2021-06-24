@@ -22,7 +22,7 @@
 .facey {
   margin: 0.5rem 0;
 }
-.api-changer, .speedometer-reseter {
+.api-changer, .speedometer-reseter, .outChars-reseter {
   cursor: pointer;
   font-size: 1.25rem;
   background-color: blueviolet;
