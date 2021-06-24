@@ -43,8 +43,6 @@ function App() {
       } else {
         neededText = data.quote; 
       }
-      setOutgoingChars('');
-      setLeftPadding(new Array(20).fill(' ').join(''));
       setText(neededText);
       setCurrentChar(neededText.charAt(0));
       setIncomingChars(neededText.substr(1));
@@ -114,6 +112,8 @@ function App() {
           setStartTime(currentTime());
           setWordCount(0);
           setSignCount(0);
+          setWpm('0');
+          setSpm('0');
           }}>Reset speed counters</p>
         <h3 className="stats">Accuracy: {accuracy}%</h3>
         <p>{(currentChar === '') ? "Please choose what you'd like to type next:": ''}</p>
