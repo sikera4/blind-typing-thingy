@@ -4,7 +4,7 @@ import useKeyPress from './hooks/useKeyPress';
 import { currentTime } from './utils/time';
 
 function App() {
-  // states for stats (Sign per minute and words per minute)
+  // states for stats (sign per minute, words per minute and accuracy)
   const [startTime, setStartTime] = useState<number>();
   const [signCount, setSignCount] = useState<number>(0);
   const [wordCount, setWordCount] = useState<number>(0);
@@ -99,7 +99,7 @@ function App() {
       <main className="App-body">
         <h1 className="header">BLIND TYPING THINGY</h1>
         <h2 className="facey">(͠≖ ͜ʖ͠≖)👌</h2>
-        <p className= "whole-string">This is what you are going to type, enjoy (anime quotes by default xD): '{text}'</p>
+        <p className= "whole-string">{text ? `This is what you are going to type, enjoy (anime quotes by default xD):${text}` : 'Loading...'}</p>
         <p className="Character">
           <span className="Character-out">
             {(leftPadding + outgoingChars).slice(-20)}
