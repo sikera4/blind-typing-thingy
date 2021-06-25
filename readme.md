@@ -11,6 +11,8 @@ Live demo can be found here: [Blind Typing Thingy](https://sikera4.github.io/bli
 * [Typescript](https://www.typescriptlang.org)
 * [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 * [Modified version of this useKeyPress hook](https://usehooks.com/useKeyPress/)
+
+
 APIs used:
 * [Animechan](https://github.com/RocktimSaikia/anime-chan)
 * [Kanye REST (xD)](https://kanye.rest)
