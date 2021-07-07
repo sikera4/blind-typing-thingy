@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/blind-typing-thingy/static/css/main.feb0c44c.chunk.css",
-    "main.js": "/blind-typing-thingy/static/js/main.e59a8fef.chunk.js",
-    "main.js.map": "/blind-typing-thingy/static/js/main.e59a8fef.chunk.js.map",
+    "main.css": "/blind-typing-thingy/static/css/main.b9156cdb.chunk.css",
+    "main.js": "/blind-typing-thingy/static/js/main.372c2849.chunk.js",
+    "main.js.map": "/blind-typing-thingy/static/js/main.372c2849.chunk.js.map",
     "runtime-main.js": "/blind-typing-thingy/static/js/runtime-main.b7a45ead.js",
     "runtime-main.js.map": "/blind-typing-thingy/static/js/runtime-main.b7a45ead.js.map",
     "static/js/2.f50f93aa.chunk.js": "/blind-typing-thingy/static/js/2.f50f93aa.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f3970b9f.chunk.js": "/blind-typing-thingy/static/js/3.f3970b9f.chunk.js",
     "static/js/3.f3970b9f.chunk.js.map": "/blind-typing-thingy/static/js/3.f3970b9f.chunk.js.map",
     "index.html": "/blind-typing-thingy/index.html",
-    "static/css/main.feb0c44c.chunk.css.map": "/blind-typing-thingy/static/css/main.feb0c44c.chunk.css.map",
+    "static/css/main.b9156cdb.chunk.css.map": "/blind-typing-thingy/static/css/main.b9156cdb.chunk.css.map",
     "static/js/2.f50f93aa.chunk.js.LICENSE.txt": "/blind-typing-thingy/static/js/2.f50f93aa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b7a45ead.js",
     "static/js/2.f50f93aa.chunk.js",
-    "static/css/main.feb0c44c.chunk.css",
-    "static/js/main.e59a8fef.chunk.js"
+    "static/css/main.b9156cdb.chunk.css",
+    "static/js/main.372c2849.chunk.js"
   ]
 }
