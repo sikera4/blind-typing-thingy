@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import useKeyPress from './hooks/useKeyPress';
 import { currentTime } from './utils/time';
+import ApiChangers from './components/apiChanger';
+import ResetterButtons from './components/resetterButtons';
+import Character from './components/character';
 
 function App() {
   // states for stats (sign per minute, words per minute and accuracy)
@@ -94,54 +97,47 @@ function App() {
     );
   })
 
+  // functions for interactive components
+  const handleApiChangerClick = (apiUrl: string) => {
+    setApi(apiUrl);
+    setFetchProvoker(fetchProvoker + 1);
+  }
+
+  const handleSpeedometerResetterClick = (): void => {
+    setStartTime(currentTime());
+    setWordCount(0);
+    setSignCount(0);
+    setWpm('0');
+    setSpm('0');
+  }
+
+  const handleOutCharsResetterClick = (): void => {
+    setLeftPadding(new Array(20).fill(' ').join(''));
+    setTypedChars('');
+    setOutgoingChars('');
+    setAccuracy('0');
+  }
+
   return (
     <div className="App">
       <main className="App-body">
         <h1 className="header">BLIND TYPING THINGY</h1>
         <h2 className="facey">(͠≖ ͜ʖ͠≖)👌</h2>
-        <p className= "whole-string">{text ? `This is what you are going to type, enjoy (anime quotes by default xD):${text}` : 'Loading...'}</p>
-        <p className="Character">
-          <span className="Character-out">
-            {(leftPadding + outgoingChars).slice(-20)}
-          </span>
-          <span className={wrongChar ? "Character-current-wrong" : "Character-current"}>{currentChar}</span>
-          <span>{incomingChars.substr(0, 20)}</span>
-        </p>
+        <p className= "whole-string">{text ? `This is what you are going to type, enjoy (anime quotes by default xD): ${text}` : 'Loading...'}</p>
+        <Character 
+        leftPadding={leftPadding} 
+        outgoingChars={outgoingChars} 
+        wrongChar={wrongChar}
+        currentChar={currentChar}
+        incomingChars={incomingChars}/>
         <h3 className="stats">Signs Per Minute: {spm} | Words Per Minute: {wpm}</h3>
-        <p>
-          <span className="speedometer-reseter" onClick={() => {
-            setStartTime(currentTime());
-            setWordCount(0);
-            setSignCount(0);
-            setWpm('0');
-            setSpm('0');
-            }}>Reset speed counters
-          </span>
-          <span className="outChars-reseter" onClick={() => {
-            setLeftPadding(new Array(20).fill(' ').join(''));
-            setTypedChars('');
-            setOutgoingChars('');
-            setAccuracy('0');
-            }}>Clear typed characters and reset accuracy
-          </span>
-        </p>
+        <ResetterButtons 
+        handleSpeedometerResetterClick={handleSpeedometerResetterClick} 
+        handleOutCharsResetterClick={handleOutCharsResetterClick}/>
         <h3 className="stats">Accuracy: {accuracy}%</h3>
         <p>{(currentChar === '') ? "Please choose what you'd like to type next:": ''}</p>
         <p className='commentary'>You can choose what you want to type from a WIDE range of opportunities! What are you interested in?</p>
-        <p className='api-changers'>
-          <span className="api-changer" onClick={() => {
-            setApi('https://api.quotable.io/random');
-            setFetchProvoker(fetchProvoker + 1);
-            }}>Some deep thoughts...</span>
-          <span className="api-changer" onClick={() => {
-            setApi('https://animechan.vercel.app/api/random');
-            setFetchProvoker(fetchProvoker + 1);
-            }}>Anime quotes!</span>
-          <span className="api-changer" onClick={() => {
-            setApi('https://api.kanye.rest');
-            setFetchProvoker(fetchProvoker + 1);
-            }}>Maybe... Kanye West quotes?..</span>
-        </p>
+        <ApiChangers handleApiChangerClick={handleApiChangerClick}/>
       </main>
     </div>
   );
